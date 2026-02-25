@@ -5,7 +5,6 @@ const sendBtn = document.getElementById('sendBtn');
 const chatToggle = document.getElementById('chatToggle');
 const chatWidget = document.getElementById('chatWidget');
 
-// Toggle chat widget open/close
 chatToggle.addEventListener('click', () => {
   chatToggle.classList.toggle('is-open');
   chatWidget.classList.toggle('is-open');
