@@ -2,6 +2,14 @@ const chatForm = document.getElementById('chatForm');
 const chatInput = document.getElementById('chatInput');
 const chatMessages = document.querySelector('.chat-messages');
 const sendBtn = document.getElementById('sendBtn');
+const chatToggle = document.getElementById('chatToggle');
+const chatWidget = document.getElementById('chatWidget');
+
+// Toggle chat widget open/close
+chatToggle.addEventListener('click', () => {
+  chatToggle.classList.toggle('is-open');
+  chatWidget.classList.toggle('is-open');
+});
 
 // Add a message to the chat
 function addMessage(content, isUser = false) {
