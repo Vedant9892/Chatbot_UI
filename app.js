@@ -61,9 +61,7 @@ chatForm.addEventListener('submit', (e) => {
 
   addMessage(message, true);
   chatInput.value = '';
-  sendBtn.disabled = true;
-
-
+  sendBtn.disabled = true
   setTimeout(() => {
     const response = getBotResponse(message);
     addMessage(response, false);
