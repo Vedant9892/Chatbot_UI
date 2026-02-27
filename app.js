@@ -10,7 +10,6 @@ chatToggle.addEventListener('click', () => {
   chatWidget.classList.toggle('is-open');
 });
 
-// Add a message to the chat
 function addMessage(content, isUser = false) {
   const messageEl = document.createElement('div');
   messageEl.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
@@ -36,7 +35,7 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// Simple mock response for demo
+
 function getBotResponse(userMessage) {
   const lower = userMessage.toLowerCase();
   if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
