@@ -117,12 +117,10 @@ body {
 .chat-toggle.is-open:hover {
   transform: scale(1.05);
 }
-
 .chat-toggle .chat-icon {
   width: 28px;
   height: 28px;
 }
-
 .chat-toggle .close-icon {
   display: none;
   width: 28px;
