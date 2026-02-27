@@ -53,7 +53,7 @@ function getBotResponse(userMessage) {
   return `You said: "${userMessage}". I'm a simple demo bot — connect me to an API to make me smarter!`;
 }
 
-// Handle form submit
+
 chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const message = chatInput.value.trim();
@@ -63,7 +63,7 @@ chatForm.addEventListener('submit', (e) => {
   chatInput.value = '';
   sendBtn.disabled = true;
 
-  // Simulate bot typing delay
+
   setTimeout(() => {
     const response = getBotResponse(message);
     addMessage(response, false);
