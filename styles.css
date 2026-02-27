@@ -137,7 +137,7 @@ body {
   display: block;
 }
 
-/* Chat widget - Stays hidden by default */
+
 .chat-widget {
   position: fixed;
   bottom: 90px;
