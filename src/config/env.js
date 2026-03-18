@@ -9,7 +9,6 @@ export const env = {
   systemPrompt: process.env.SYSTEM_PROMPT || "You are a helpful chatbot assistant.",
   maxHistoryMessages: Number(process.env.MAX_HISTORY_MESSAGES || 10)
 };
-
 export function validateEnv() {
   if (!env.groqApiKey) {
     throw new Error("Missing GROQ_API_KEY. Copy .env.example to .env and set the key.");
