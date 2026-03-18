@@ -36,25 +36,30 @@ function escapeHtml(text) {
 }
 
 
-function getBotResponse(userMessage) {
-  const lower = userMessage.toLowerCase();
-  if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
-    return "Hello! Great to meet you. What would you like to know?";
+const sessionId = `session-${Date.now()}`;
+
+async function getBotResponse(userMessage) {
+  const response = await fetch('/api/chat', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      message: userMessage,
+      sessionId
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch chatbot response.');
   }
-  if (lower.includes('help')) {
-    return "I'm here to help! You can ask me anything. Try asking about the weather, or just chat with me.";
-  }
-  if (lower.includes('thank')) {
-    return "You're welcome! Is there anything else I can help with?";
-  }
-  if (lower.includes('bye') || lower.includes('goodbye')) {
-    return "Goodbye! Feel free to come back anytime.";
-  }
-  return `You said: "${userMessage}". I'm a simple demo bot — connect me to an API to make me smarter!`;
+
+  const data = await response.json();
+  return data.reply || 'I could not generate a response this time.';
 }
 
 
-chatForm.addEventListener('submit', (e) => {
+chatForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const message = chatInput.value.trim();
   if (!message) return;
@@ -63,9 +68,12 @@ chatForm.addEventListener('submit', (e) => {
   chatInput.value = '';
   sendBtn.disabled = true;
 
-  setTimeout(() => {
-    const response = getBotResponse(message);
+  try {
+    const response = await getBotResponse(message);
     addMessage(response, false);
+  } catch (error) {
+    addMessage('Sorry, something went wrong while contacting the chatbot service.', false);
+  } finally {
     sendBtn.disabled = false;
-  }, 500 + Math.random() * 500);
+  }
 });
