@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 
 dotenv.config();
-
+// Validate and export environment variables
 export const env = {
   port: Number(process.env.PORT || 3000),
   groqApiKey: process.env.GROQ_API_KEY || "",
