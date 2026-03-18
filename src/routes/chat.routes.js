@@ -3,6 +3,8 @@ import { env } from "../config/env.js";
 import { generateGroqReply } from "../services/groq.service.js";
 import { getRecentSessionMessages, saveChatMessage } from "../services/chat-storage.service.js";
 
+
+// Chat endpoint to handle user messages and generate bot replies
 const router = Router();
 
 router.post("/chat", async (req, res, next) => {
