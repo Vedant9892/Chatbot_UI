@@ -1,4 +1,4 @@
-# Groq Chatbot UI
+
 
 Clean starter structure for a Groq-powered chatbot with:
 
@@ -60,7 +60,7 @@ Chatbot_UI/
 npm install
 ```
 
-2. Create your local env file:
+2. Create your local env file accordingly adding keys:
 
 ```bash
 copy .env.example .env
