@@ -1,36 +1,91 @@
-# Chatbot UI
+# Groq Chatbot UI
 
-A simple, modern chatbot interface built with HTML, CSS, and JavaScript.
+Clean starter structure for a Groq-powered chatbot with:
 
-## Structure
+- Frontend widget files in `public/`
+- Express backend in `src/`
+- Environment template in `.env.example`
+- Local chatbot data storage in `data/`
+- Log storage in `logs/`
 
-```
+## Folder Structure
+
+```text
 Chatbot_UI/
-├── index.html    # Main page structure
-├── styles.css    # Styling (dark theme)
-├── app.js        # Chat logic & mock responses
-└── README.md
+|-- .env.example
+|-- .gitignore
+|-- package.json
+|-- README.md
+|-- public/
+|   |-- index.html
+|   |-- styles.css
+|   `-- app.js
+|-- src/
+|   |-- server.js
+|   |-- config/
+|   |   `-- env.js
+|   |-- middleware/
+|   |   `-- error-handler.js
+|   |-- routes/
+|   |   `-- chat.routes.js
+|   |-- services/
+|   |   |-- chat-storage.service.js
+|   |   `-- groq.service.js
+|   `-- utils/
+|       `-- fileStore.js
+|-- data/
+|   |-- chats/
+|   |   |-- .gitkeep
+|   |   `-- messages.json
+|   |-- sessions/
+|   |   |-- .gitkeep
+|   |   `-- sessions.json
+|   |-- users/
+|   |   |-- .gitkeep
+|   |   `-- users.json
+|   |-- knowledge/
+|   |   |-- .gitkeep
+|   |   `-- knowledge-base.json
+|   `-- transcripts/
+|       `-- transcripts.jsonl
+`-- logs/
+	`-- .gitkeep
 ```
 
-## Run Locally
+## Quick Start
 
-Open `index.html` in your browser or use a local server:
+1. Install dependencies:
 
 ```bash
-npx serve .
+npm install
 ```
 
-## Features
+2. Create your local env file:
 
-- Dark theme with modern styling
-- Message bubbles for user and bot
-- Simple mock bot responses (hello, help, thanks, bye)
-- Smooth animations
-- Responsive layout
+```bash
+copy .env.example .env
+```
 
-## Next Steps
+3. Add your Groq API key in `.env`:
 
-- Connect to your AI/LLM API (OpenAI, Anthropic, etc.)
-- Add message persistence
-- Support markdown in messages
-- Add typing indicator
+```env
+GROQ_API_KEY=your_real_key
+```
+
+4. Start the app:
+
+```bash
+npm run dev
+```
+
+5. Open:
+
+```text
+http://localhost:3000
+```
+
+## Notes
+
+- Chat history is saved in `data/chats/messages.json`.
+- Session/user metadata files are ready in `data/sessions/` and `data/users/`.
+- Knowledge seeds can be stored in `data/knowledge/knowledge-base.json`.
