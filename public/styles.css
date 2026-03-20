@@ -11,6 +11,7 @@
   --radius: 12px;
   --radius-sm: 8px;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +25,7 @@ body {
   min-height: 100vh;
 }
 
-/* This is a Sample UI For home page itself */
+
 .page {
   min-height: 100vh;
   display: flex;
@@ -78,9 +79,12 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
@@ -91,6 +95,7 @@ body {
     transform: scale(0.8);
     opacity: 0.6;
   }
+
   100% {
     transform: scale(1.4);
     opacity: 0;
@@ -116,10 +121,12 @@ body {
 .chat-toggle.is-open:hover {
   transform: scale(1.05);
 }
+
 .chat-toggle .chat-icon {
   width: 28px;
   height: 28px;
 }
+
 .chat-toggle .close-icon {
   display: none;
   width: 28px;
@@ -219,8 +226,15 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Messages */
@@ -245,6 +259,7 @@ body {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -354,6 +369,7 @@ body {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
 .send-btn svg {
   width: 22px;
   height: 22px;
