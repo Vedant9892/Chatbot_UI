@@ -1,6 +1,16 @@
 
 
+Clean starter structure for a Groq-powered chatbot with:
 
+- Frontend widget files in `public/`
+- Express backend in `src/`
+- Environment template in `.env.example`
+- Local chatbot data storage in `data/`
+- Log storage in `logs/`
+
+## Folder Structure
+
+```text
 Chatbot_UI/
 |-- .env.example
 |-- .gitignore
