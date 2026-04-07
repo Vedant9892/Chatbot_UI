@@ -4,7 +4,7 @@ const chatMessages = document.querySelector('.chat-messages');
 const sendBtn = document.getElementById('sendBtn');
 const chatToggle = document.getElementById('chatToggle');
 const chatWidget = document.getElementById('chatWidget');
-/// Hello this is a test commit
+
 chatToggle.addEventListener('click', () => {
   chatToggle.classList.toggle('is-open');
   chatWidget.classList.toggle('is-open');

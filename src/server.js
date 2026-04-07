@@ -39,3 +39,5 @@ bootstrap().catch((error) => {
   console.error("Failed to start app:", error.message);
   process.exit(1);
 });
+
+// For testing purposes
